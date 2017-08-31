@@ -224,7 +224,7 @@ class CommandInterface:
             self._wait_for_ask(u"0x11 address failed")
             N = (lng - 1) & 0xFF
             crc = N ^ 0xFF
-            self.sp.write(bytes([N, crc]))
+            self.sp.write(bytearray([N, crc]))
             self._wait_for_ask(u"0x11 length failed")
             return self.sp.read(lng)
         else:
