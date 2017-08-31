@@ -1,0 +1,7 @@
+
+.idea/misc.xml
+.idea/modules.xml
+.idea/stm32loader.iml
+.idea/workspace.xml
+test.py
+*.pyc
