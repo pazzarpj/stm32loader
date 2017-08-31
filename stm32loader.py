@@ -405,7 +405,8 @@ class CommandInterface:
             pbar.finish()
         else:
             mdebug(5, "Write %(len)d bytes at 0x%(addr)X" % {'addr': addr, 'len': 256})
-        self.cmdWriteMemory(addr, data[offs:offs + lng] + (bytearray([0xFF]) * (256 - lng)))
+        data.extend([0xFF] * (256 - lng))
+        self.cmdWriteMemory(addr, data[offs:offs + 256])
 
     def __enter__(self):
         pass
